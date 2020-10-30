@@ -1,0 +1,70 @@
+on:
+  push:
+    branches:
+      - master
+name: build-test
+jobs:
+  lint:
+    strategy:
+      matrix:
+        go-version: [1.14.x, 1.15.x]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Checkout ruleguard/semgrep rules
+      uses: actions/checkout@v2
+      with:
+        repository: 'mccurdyc/semgrep-go'
+        path: 'semgrep-go'
+    - name: Installing necessary tools
+      run: make dev-dependencies
+      shell: bash
+    - name: Check Module
+      run: make check-mod
+      shell: bash
+    - name: Check Imports
+      run: make check-imports
+      shell: bash
+    - name: Check Fmt
+      run: make check-fmt
+      shell: bash
+    - name: Vet
+      run: make vet
+      shell: bash
+    - name: Staticcheck
+      run: make staticcheck
+      shell: bash
+    - name: Ruleguard
+      run: ruleguard -c=0 -rules ./semgrep-go/ruleguard.rules.go .
+      shell: bash
+    - name: Semgrep
+      run: docker run --rm -v "${PWD}:/src" -v "${PWD}/semgrep-go:/semgrep-go" returntocorp/semgrep --error -f /semgrep-go .
+      shell: bash
+  test:
+    strategy:
+      matrix:
+        go-version: [1.14.x, 1.15.x]
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ${{ matrix.go-version }}
+    - name: Test
+      run: make test
+      shell: bash
+    - name: Test Coverage
+      run: make test-coverage
+      shell: bash
+    - name: Upload Test Coverage
+      run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
+      shell: bash
