@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./docs/imgs/logo.png"><br>
   <h3 align="center">{{{.Name}}}</h3>
-  <p align="center">{{{.Description}}}</p>
+  <p align="center"><b>{{{.Description}}}</b></p>
 
   [![Build Status][build-badge]][build-url]
   [![GoDev][godev-badge]][godev-url]
@@ -20,6 +20,18 @@
 [codecov-url]: https://codecov.io/gh/{{{.GitHubUser}}}/{{{.Name}}}
 [release-badge]: https://img.shields.io/github/release/{{{.GitHubUser}}}/{{{.Name}}}.svg
 [release-url]: https://github.com/{{{.GitHubUser}}}/{{{.Name}}}/releases/latest
+
+## Overview
+
+{{{.Overview}}}
+
+### Goals
+
+{{{.Goals}}}
+
+### Non-goals
+
+{{{.NonGoals}}}
 
 ## Installing
 

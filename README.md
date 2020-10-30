@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./docs/imgs/logo.png"><br>
-  <p align="center">Project construction from opinionated templates.</p>
+  <p align="center"><b>:construction_site: Language-agnostic project construction from opinionated, composable templates.</b></p>
 
   [![Build Status][build-badge]][build-url]
   [![GoDev][godev-badge]][godev-url]
@@ -22,12 +22,18 @@
 
 ## Overview
 
-crain provides a way to construct projects from opinionated, composable templates.
+:construction_site: Language-agnostic project construction from opinionated, composable templates.
+
+### Goals
 
 My goal with this project, specifically with the templates is to "document"
-the opinions that I have in the form of templates that can be shared and used by
-others or minimally, referenced in code reviews. While these opinions are my own,
+the opinions that I currently hold, in the form of templates that can be shared and used by
+others or minimally, be used as a reference. While these opinions are my own,
 they have absolutely been influenced by the work of others.
+
+### Non-goals
+
+TODO
 
 ## Installing
 

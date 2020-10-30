@@ -23,6 +23,21 @@ variable "BuildCommand" {
   description = "A command for building the binary or binaries."
 }
 
+variable "Overview" {
+  type = string
+  description = "The README's overview section."
+}
+
+variable "Goals" {
+  type = string
+  description = "The README's goals section."
+}
+
+variable "NonGoals" {
+  type = string
+  description = "The README's non-goals section."
+}
+
 variable "Installing" {
   type = string
   description = "The README's installing section."
