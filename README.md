@@ -24,6 +24,10 @@
 
 Language-agnostic project construction from opinionated, composable templates.
 
+crain differs from, say GitHub templates, in that a primary goal crain is composability
+of templates from (in the future) arbitrary targets, while GitHub templates are
+more focused on providing an all-encompassing template for a new project or repository.
+
 ### Goals
 
 My goal with this project, specifically with the templates is to "document"
