@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./docs/imgs/logo.png"><br>
-  <p align="center"><b>:construction_site: Language-agnostic project construction from opinionated, composable templates.</b></p>
+  <p align="center"><b>Language-agnostic project construction from opinionated, composable templates.</b></p>
 
   [![Build Status][build-badge]][build-url]
   [![GoDev][godev-badge]][godev-url]
@@ -22,7 +22,7 @@
 
 ## Overview
 
-:construction_site: Language-agnostic project construction from opinionated, composable templates.
+Language-agnostic project construction from opinionated, composable templates.
 
 ### Goals
 
@@ -30,6 +30,9 @@ My goal with this project, specifically with the templates is to "document"
 the opinions that I currently hold, in the form of templates that can be shared and used by
 others or minimally, be used as a reference. While these opinions are my own,
 they have absolutely been influenced by the work of others.
+
+Additionally, the current templates are pretty focused on the Go programming language
+since that is my primary general-purpose programming language.
 
 ### Non-goals
 
